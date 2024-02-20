@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+    <h1>YA-CHAT</h1>
+    </header>
+    <div class="person">
+        <button class="button person-button active-person" id="boy-selector">Abbai</button>
+        <button class="button person-button" id="girl-selector">Ammai</button>
+    </div>
+
+
+    <div class="chat-container">
+        <h2 class="chat-header">Abbai chatting...</h2>
+        <div class="chat-messages">
+            <div class="message black-bg">
+                <div class="message-sender">Abbai</div>
+                <div class="message-text">HEY ammai,wats'up</div>
+                <div class="message-timestamp">21.19</div>
+            </div>
+
+            <div class="message light-bg">
+                <div class="message-sender">Ammai</div>
+                <div class="message-text">HEY abbai,im chatting,what about you</div>
+                <div class="message-timestamp">21.20</div>
+        </div>
+    </div>
+    <form class="input-form ">
+        <input type="text" class="input-chat" placeholder="type here....">
+        <button type="submit" class="send-button">Send</button>
+    </form>
+    <button class="clear-button">Clear Chat</button>
+</div>
+<script src="./app.js"></script>
+</body>
+</html>

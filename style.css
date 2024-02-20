@@ -1,0 +1,136 @@
+
+    body {
+        background: linear-gradient(to bottom right, rgb(16, 5, 5) 60%, rgb(34, 34, 70) 40%);
+        height: 100vh;
+    }
+    
+.button {
+border: none;
+padding: 0.5em;
+border-radius: 5px;
+cursor: pointer;
+}
+.button:hover{
+    filter: brightness(90%);
+}
+.button:active{
+     transform: translateY(3px);
+}
+.chat-container {
+    background: linear-gradient(to bottom, #3498db, #2c3e50); /* Adjust colors as needed */
+    font-family: cursive;
+    border-radius: 0.5em;
+    padding: 1.5em;
+    margin: 2em auto;
+    max-width: 37.5em;
+    height: 37.5em;
+    box-shadow: 0 0 10px black;
+    overflow: hidden;
+}
+
+.person{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin: 3em auto 1em;
+    max-width:40em;
+}
+.person-button{
+    width:100%;
+    background-color:cadetblue;
+    color: black;
+    font-size: medium;
+}
+.active-person{
+    background-color:aqua;
+    box-shadow:0 0 10px rgb(1, 26, 49);
+}
+
+.chat-header{
+    margin-bottom: 1em;
+    color: whitesmoke;
+}
+.chat-header h2{
+    font-size: 1.25em;
+    font-weight: bold;
+}
+.chat-messages{
+    height: 23em;
+    overflow-y: scroll;
+}
+.chat-messages::-webkit-scrollbar{
+    width: 8px;
+}
+.chat-message::-webkit-scrollbar-thumb{
+    background-color: bisque;
+    border-radius: 5px;
+}
+.chat-messages::-webkit-scrollbar-track{
+    background: darkslategrey;
+}
+.message{
+    padding: 0.635em;
+    border-radius:1em;
+    margin-bottom:0.625em;
+    display:flex;
+    color: antiquewhite;
+    flex-direction: column;
+}
+.message-sender{
+    font-weight: bold;
+    margin-bottom: 0.31em;
+}
+.message-text{
+    font-size: 0.8em;
+    margin-bottom:0.21em;
+    word-wrap: break-word;
+}
+.message-timestamp{
+    font-size: 0.65em;
+    text-align: right;
+}
+.black-bg{
+    background-color:black
+}
+.light-bg{
+    background-color:rgb(34, 34, 70);
+}
+.input-form{
+    display: flex;
+    align-items: center;
+    margin-top: 2em;
+}
+.input-chat{
+    padding: 0.345em;
+    border: none;
+    border-radius: 3px;
+    background-color: bisque;
+    color: black;
+    font-size: 1em;
+    flex-grow:1;
+     
+}
+.send-button{
+    background-color:darkgreen;
+    color:bisque;
+    font-weight: bold;
+    margin-left: 0.625em;
+}
+.send-button:active{
+    transform: translateY(3px);
+}
+
+.clear-button{
+    display: block;
+    margin: 2.5em auto;
+    
+}
+.clear-button:active{
+    transform: translateY(3px);
+}
+h1{
+    color:rgb(19, 203, 231);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    margin-top: 1em;
+}
