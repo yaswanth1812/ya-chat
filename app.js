@@ -8,7 +8,7 @@ const clearButton =document.querySelector('.clear-button')
 
 
 const chatElement = (message)=>`
-    <div class="message ${message.sender === 'boy' ? 'black-bg' : 'light-bg'}">
+    <div class="message ${message.sender === 'User-A' ? 'black-bg' : 'light-bg'}">
     <div class="message-sender">${message.sender}</div>
     <div class="message-text">${message.text}</div>
     <div class="message-timestamp">${message.timestamp}</div>
@@ -17,18 +17,18 @@ const chatElement = (message)=>`
 ;
 
 
-let messageSender = 'Abbai';
+let messageSender = 'User-A';
 
 
 const updateSender = (name)=>{
     messageSender = name
     chatHeader.innerText =`${messageSender} messaging....`
     chatInput.placeholder =`Type here, ${messageSender}`
-    if(name === 'Abbai'){
+    if(name === 'User-A'){
         boy.classList.add('active-person')
         girl.classList.remove('active-person')
     }
-    if(name === 'Ammai'){
+    if(name === 'User-B'){
         girl.classList.add('active-person')
         boy.classList.remove('active-person')
     }
@@ -36,15 +36,19 @@ const updateSender = (name)=>{
 
 };
 
-boy.onclick = ()=> updateSender('Abbai')
-girl.onclick = ()=> updateSender('Ammai')
+boy.onclick = ()=> updateSender('User-A')
+girl.onclick = ()=> updateSender('User-B')
+
+
 
 const clearChat =()=>{
-    cMsg.innerHTML = '';
     localStorage.removeItem('messages');
+    cMsg.innerHTML = '';
+   
 };
+clearButton.addEventListener('click', clearChat);
 
-clearButton.onclick = clearChat;
+
 
 const messageSend =(event) => {
     event.preventDefault();
@@ -54,12 +58,23 @@ const message={
 text:chatInput.value,
 timestamp,
 };
-let messages = JSON.parse(localStorage.getItem('message')) || [];
+let messages = JSON.parse(localStorage.getItem('messages')) || [];
 messages.push(message);
 
-localStorage.setItem('messages',JSON.stringify(message));
-cMsg.innerHTML += chatElement(message)
-inputForm.reset()
+localStorage.setItem('messages',JSON.stringify(messages));
+renderMessages(messages);
+inputForm.reset();
+
 cMsg.scrollTop = cMsg.scrollHeight
-}
+};
+
+const renderMessages = (messages) => {
+    cMsg.innerHTML = messages.map(chatElement).join('');
+};
+
 inputForm.addEventListener('submit',messageSend)
+
+document.addEventListener('DOMContentLoaded', () => {
+    const messages = JSON.parse(localStorage.getItem('messages')) || [];
+    renderMessages(messages);
+})
